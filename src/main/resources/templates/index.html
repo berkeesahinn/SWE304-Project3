@@ -1,66 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-
-<title>Publish Management System</title>
-
-<style>
-
-body{
-font-family: Arial;
-text-align:center;
-margin-top:80px;
-}
-
-.container{
-width:400px;
-margin:auto;
-}
-
-a{
-
-display:block;
-
-margin:15px;
-
-padding:15px;
-
-background:#2c3e50;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:8px;
-
-}
-
-a:hover{
-
-background:#34495e;
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publish Management System</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background: radial-gradient(circle at top right, #1a1a2e, #121212); 
+            color: #e0e0e0; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+        }
+        .hero-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .nav-card {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+            height: 100%;
+        }
+        .nav-card:hover {
+            transform: translateY(-10px);
+            background: #252525;
+            border-color: #0d6efd;
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.2);
+            color: #0d6efd;
+        }
+        .icon-box {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .badge-tech {
+            background: rgba(13, 110, 253, 0.1);
+            color: #0d6efd;
+            border: 1px solid rgba(13, 110, 253, 0.2);
+            font-size: 0.8rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+        }
+    </style>
 </head>
+<body class="container">
 
-<body>
+    <div class="hero-section text-center w-100">
+        <div class="mb-4">
+            <span class="badge-tech fw-bold text-uppercase tracking-wider">Engineering Project</span>
+        </div>
+        
+        <h1 class="display-3 fw-bold mb-3 bg-gradient text-primary">Publish Management</h1>
+        <p class="lead text-secondary mb-5">
+            A robust management system powered by <br>
+            <span class="text-info">Spring Boot</span> + 
+            <span class="text-info">PostgreSQL</span> + 
+            <span class="text-info">Docker</span>
+        </p>
 
-<div class="container">
+        <div class="row g-4 justify-content-center">
+            <!-- Authors Card -->
+            <div class="col-md-4">
+                <a href="/authors" class="nav-card shadow">
+                    <div class="icon-box">✍️</div>
+                    <h3 class="h5 fw-bold">Manage Authors</h3>
+                    <p class="small text-secondary mb-0">List, add and organize author database</p>
+                </a>
+            </div>
 
-<h1>Publish Management System</h1>
+            <!-- Books Card -->
+            <div class="col-md-4">
+                <a href="/books" class="nav-card shadow">
+                    <div class="icon-box">📚</div>
+                    <h3 class="h5 fw-bold">Manage Books</h3>
+                    <p class="small text-secondary mb-0">Control book inventory and titles</p>
+                </a>
+            </div>
 
-<p>Spring Boot + PostgreSQL + Docker Project</p>
+            <!-- Publishes Card -->
+            <div class="col-md-4">
+                <a href="/publishes" class="nav-card shadow">
+                    <div class="icon-box">🚀</div>
+                    <h3 class="h5 fw-bold">Manage Publishes</h3>
+                    <p class="small text-secondary mb-0">Track and create publishing records</p>
+                </a>
+            </div>
+        </div>
 
-<a href="/authors">Manage Authors</a>
-
-<a href="/books">Manage Books</a>
-
-<a href="/publishes">Manage Publishes</a>
-
-</div>
+        <div class="mt-5 pt-4 border-top border-secondary border-opacity-25">
+            <p class="small text-muted">Stockholm Edge Server | CI/CD Active ✅</p>
+        </div>
+    </div>
 
 </body>
 </html>
