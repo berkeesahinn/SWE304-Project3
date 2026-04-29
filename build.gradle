@@ -6,6 +6,9 @@ plugins {
 
 group = 'com.yigit'
 version = '0.0.1-SNAPSHOT'
+java {
+    sourceCompatibility = '25'
+}
 
 repositories {
 	mavenCentral()
