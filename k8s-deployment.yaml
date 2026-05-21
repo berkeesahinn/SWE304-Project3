@@ -17,3 +17,6 @@ spec:
         image: iamberkesahin/publish-management:latest
         ports:
         - containerPort: 8080
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://postgres-service:5432/publishdb
